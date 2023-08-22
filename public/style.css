@@ -1,0 +1,22 @@
+:root{
+    --warna-bg-primary: rgb(170, 173, 172);
+    --warna-text-primary: rgb(184, 228, 201);
+    --warna-bg: black;
+    --font1: 'Roboto', sans-serif;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.bg-orange{
+    background-color: var(--warna-bg-primary);
+}
+.navbar-brand{
+    font-weight: 600;
+}
+.header{
+    background-image: url(img/profesi-mata-mata.jpg);
+    padding: 200px;
+    background-size: cover;
+    background-position: center;
+}
