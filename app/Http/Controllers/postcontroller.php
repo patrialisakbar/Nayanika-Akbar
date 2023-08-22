@@ -41,13 +41,13 @@ class postcontroller extends Controller
             ]
         );
         $file = $request->file('gambar');
-        $path = $file->storeAs('uploads', time() .'.'. $request->file('gambar')->extension());
-    
-        $post =new post;
+        $path = $file->storeAs('uploads', time() . '.' . $request->file('gambar')->extension());
+
+        $post = new post;
         $post->penulis = $request['penulis'];
         $post->judul = $request['judul'];
         $post->isi = $request['isi'];
-        $post->gambar = $request =$path;
+        $post->gambar = $request = $path;
         $post->Save();
 
         return redirect('home');
@@ -80,23 +80,22 @@ class postcontroller extends Controller
                 'gambar' => 'mimes:png,jpg,jpeg,gif|image|max:5848',
             ]
         );
-        if ($request->file('gambar')){
-            if ($request->oldimage){
-                storage::delete($request->oldimage);
+        if ($request->file('gambar')) {
+            if ($request->oldimage) {
+                Storage::delete($request->oldimage);
             }
-        
-        $file = $request->file('gambar');
-        $path = $file->storeAs('uploads', time() .'.'. $request->file('gambar')->extension());
-    }else {
-        $path = $request->oldimage;
-    }
+            $file = $request->file('gambar');
+            $path = $file->storeAs('uploads', time() . '.' . $request->file('gambar')->extension());
+        } else {
+            $path = $request->oldimage;
+        }
 
-    
+
         $post = Post::find($id);
         $post->penulis = $request['penulis'];
         $post->judul = $request['judul'];
         $post->isi = $request['isi'];
-        $post->gambar = $request =$path;
+        $post->gambar = $path;
         $post->Save();
 
         return redirect('/home');

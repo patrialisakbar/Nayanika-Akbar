@@ -15,12 +15,12 @@ use App\Http\Controllers\PostController;
 |
 */
 
-route::get('/profil', function (){
+route::get('/profil', function () {
     return view('profil');
 });
-route::get('/home', [PostController::class, 'index']) ;
+route::get('/home', [PostController::class, 'index']);
 route::get('/create', [PostController::class, 'create']);
 route::post('/saveblog', [PostController::class, 'store']);
 route::get('/edit/{id}', [PostController::class, 'edit']);
-route::put('/updateblog{id}', [PostController::class, 'update']);
+route::put('/updateblog/{id}', [PostController::class, 'update']);
 route::get('/delete/{id}', [PostController::class, 'destroy']);
