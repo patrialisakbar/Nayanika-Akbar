@@ -27,3 +27,4 @@ route::post('/saveblog', [PostController::class, 'store']);
 route::get('/edit/{id}', [PostController::class, 'edit']);
 route::put('/updateblog/{id}', [PostController::class, 'update']);
 route::get('/delete/{id}', [PostController::class, 'destroy']);
+route::get('/coba', [PostController::class, 'coba']);
